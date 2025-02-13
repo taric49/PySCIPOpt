@@ -302,6 +302,8 @@ cdef class Column:
         col = Column()
         col.scip_col = scipcol
         return col
+    def getIndex(self):
+      return SCIPcolGetIndex(self.scip_col)
 
     def getLPPos(self):
         """gets position of column in current LP, or -1 if it is not in LP"""
